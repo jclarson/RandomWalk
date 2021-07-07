@@ -5,7 +5,7 @@ Random Walk
 #Description:
 
 The goal of this project was to create balls that perform a "random walk", moving a random step amount.
-The generated balls start with an orange one, then the rest have randomly generated colors.
+The created balls have randomly generated colors.
 The balls in the final project simulate particles projected into the air, affected by gravity.
 
 # Installation:
