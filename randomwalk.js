@@ -25,6 +25,11 @@ function getRandom(step) {
   return Math.random() * 2 * step - step;
 }
 
+function randomColor() {
+  // return a hex value between 000000 and ffffff
+  return Math.floor(Math.random() * 16777215).toString(16);
+}
+
 function update() {
   // the wind speed is added to x direction
   for (let i = 0; i < balls.length; i++) {
@@ -34,8 +39,9 @@ function update() {
     if (stats.y <= (400 - size)) {
       balls[i][0].style.left = stats.x;
       balls[i][0].style.top = stats.y;
-    }
+    } else balls[i][0].style.top = (400 - size);
   }
+
   setTimeout(update, 100); // this calls update every 1/10 second
 }
 
@@ -43,22 +49,9 @@ function factory(total) {
   for (let i = balls.length; i < total; i++) {
     let x = 100;
     let y = 300;
-    let colorNumber = Math.floor(getRandom(16777215));
-    makeBall(x, y, colorNumber.toString(16));
-    let stats = balls[i][1];
-    stats.x = x;
-    stats.y = y;
-    
+    makeBall(x, y, randomColor());
   }
-  update();
 }
 
-function addDiv(id) {
-  let div = document.createElement('div');
-  div.id = id;
-  document.getElementsByTagName('body')[0].appendChild(div);
-}
-
-makeBall(100, 300, "red");
 factory(5);
 update();
