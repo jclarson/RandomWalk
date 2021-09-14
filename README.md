@@ -2,7 +2,7 @@
 
 Random Walk
 
-#Description:
+# Description:
 
 The goal of this project was to create balls that perform a "random walk", moving a random step amount.
 The created balls have randomly generated colors.
